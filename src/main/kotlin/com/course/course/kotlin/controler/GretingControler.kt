@@ -12,18 +12,4 @@ class GretingControler(val greetingsServices: GreetingsServices) {
 
     @GetMapping("/{name}")
     fun greetings(@PathVariable("name") name: String): String = greetingsServices.retriveSaluti(name)
-
-    @GetMapping("/p")
-    fun getP() :String {
-
-        for ( i in 1..5){
-            val p =i
-            return  " $p"
-        }
-
-        return "non è vero"
-    }
-
-
-
 }
