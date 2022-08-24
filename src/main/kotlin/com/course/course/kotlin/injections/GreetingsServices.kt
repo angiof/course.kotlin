@@ -11,7 +11,7 @@ class GreetingsServices {
     lateinit var name2: String
 
     //fun che permette il servizio di dipendences
-    fun retriveSaluti(name: String) = "ciao sir $name $name2,"
+    fun retriveSaluti(name: String) = "$name,Hello from default profile"
 
 
 }
