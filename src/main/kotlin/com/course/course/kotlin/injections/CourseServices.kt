@@ -18,4 +18,11 @@ class CourseServices(val courseRepository: CourseRepository) {
         courseRepository.save(courseEntiti)
         logger.info("save corse is $courseEntiti")
     }
+
+    fun retriveAllCourses(): List<CourseDTO> {
+      return  courseRepository.findAll()
+            .map {
+                CourseDTO(it.id,it.name,it.category)
+            }
+    }
 }

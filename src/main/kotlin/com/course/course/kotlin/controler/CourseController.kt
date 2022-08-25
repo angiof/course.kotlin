@@ -8,7 +8,13 @@ import org.springframework.web.bind.annotation.*
 @RestController
 @RequestMapping("/v1/courses")
 class CourseController(val courseServices: CourseServices) {
+
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     fun addCourse(@RequestBody courseDTO: CourseDTO) = courseServices.addCourse(courseDTO)
+
+
+    @GetMapping
+    fun retriveAllCOurses() :List<CourseDTO> =courseServices.retriveAllCourses()
 }
+
